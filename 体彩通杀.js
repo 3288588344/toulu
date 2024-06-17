@@ -3,7 +3,7 @@
  *gdtc
  *Author: Mist
  *Date: 2024-06-09
- * 抓 vx公众号广东,福建体彩服务号
+ * 抓 vx公众号广东,福建体彩服务号，其他省份的自测，部分地区不行
  * cron "10 11 * * *" fjtc.js
  * export fjtc= uuid&accessToken 多账号换行或者#分隔
  */
