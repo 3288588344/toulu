@@ -1,13 +1,11 @@
 /*
 ------------------------------------------
 @Author: smallfawn 
-@Date: 2024.06.11 16:43
-@Description: 华硕商城APP 基础任务 浏览[好像有BUG]5分 + 签到5分 = 抽奖9分
+@Date: 2024.06.11 19:19
+@Description: 富士instax玩拍由我俱乐部 小程序 每日签到+抽奖
 ------------------------------------------
-经测试小程序CK失效短 故抓取APP的数据API
-变量名asusStore
-变量值 https://store.asus.com.cn/storeapi 域名请求头Headers中Authorization的值#token的值
- 多账号&或换行或新增同名变量
+变量名instax
+变量值 https://instax.app.xcxd.net.cn/ 域名Headers请求头的Authorization 去掉Bearer 多账号&或换行或新增同名变量
 [Script]
 http-response
 
@@ -24,9 +22,9 @@ hostname =
 6、如果任何单位或个人认为此脚本可能涉嫌侵犯其权利，应及时通知并提供身份证明，所有权证明，我们将在收到认证文件确认后删除此脚本。
 7、所有直接或间接使用、查看此脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此脚本，即视为您已接受此免责声明。
 */
-const $ = new Env("华硕商城APP");
-let ckName = `asusStore`;
 
+const $ = new Env("富士instax玩拍由我俱乐部");
+let ckName = `instax`;
 let userCookie = checkEnv(
     ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || ""
 );
@@ -48,173 +46,139 @@ const notify = $.isNode() ? require("./sendNotify") : "";
     for (let user of userCookie) {
         $.log(`\n🚀 user:【${index}】 start work\n`);
         index++
-        $.auth = user.split(strSplitor)[0];
-        $.token = user.split(strSplitor)[1];
+        $.token = user
         $.ckStatus = true;
-        await signIn()
-        for (let i of [1, 2]) {
-            await roll()
-            await $.wait(5000)
-
+        $.userId = null
+        await me()
+        await $.wait(3000)
+        if ($.userId) {
+            await signIn()
+            await $.wait(3000)
+            await chance()
         }
-        await $.wait(5000)
 
-        await get_more()
     }
 
     await $.sendMsg($.logs.join("\n"));
 })()
     .catch((e) => console.log(e))
     .finally(() => $.done());
+async function me() {
+    let config = {
+        url: `https://instax.app.xcxd.net.cn/api/me`,
+        method: `GET`,
+        headers: {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Authorization": "Bearer " + $.token,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "Host": "instax.app.xcxd.net.cn",
+            "Referer": "https://servicewechat.com/wx3cb572fbf3aa30c8/134/page-frame.html",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "cross-site",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x6309092b) XWEB/8555",
+            "xweb_xhr": "1"
+        },
+    }
+    let { data: result } = await Request(config);
 
-//签到
+    if (result?.error == false) {
+        $.userId = result.data.user.id
+        $.log(`[${result.data.user.nickname}] 当前积分[${result.data.user.credit}] 等级[${result.data.user.user_level_id}]`);
+    } else {
+        $.log(`获取信息 失败[${result.message}]`);
+    }
+}
 async function signIn() {
-    let time = Date.parse(new Date) / 1e3
-    let nonce = d(1e4, 99999)
-    let text = `${nonce}${time}Asus!@#$%^&*()Store`
     let config = {
-        url: `https://store.asus.com.cn/storeapi/user/my/sign`,
-        method: "POST",
+        url: `https://instax.app.xcxd.net.cn/api/user/${$.userId}/sign-activity/23/sign`,
+        method: `POST`,
         headers: {
-            'User-Agent': 'okhttp/3.9.1',
-            'Connection': 'Keep-Alive',
-            'Accept-Encoding': 'gzip',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': $.auth,
-            'plat': 'android',
-            'source': '2',
-            'version': '2.7.16',
-            'device': 'MI 8 Lite',
-            'token': $.token,
-            'visitorid': 'a232e99938994576',
-            'Cache-Control': 'no-cache'
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Authorization": "Bearer " + $.token,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "Host": "instax.app.xcxd.net.cn",
+            "Referer": "https://servicewechat.com/wx3cb572fbf3aa30c8/134/page-frame.html",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "cross-site",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x6309092b) XWEB/8555",
+            "xweb_xhr": "1"
         },
-        data: `timestamp=${time}&nonce=${nonce}&signature=${MD5(text)}`
+        data: JSON.stringify({})
     }
-    let { data: result } = await Request(config)
-    if (result?.code == 200) {
-        $.log(`签到成功`)
+    let { data: response } = await Request(config);
+    if (response?.error == false) {
+        $.log(`签到成功`);
     } else {
-        $.log(`签到失败 [${result.msg}]`)
+        $.log(`签到失败[${response}]`);
     }
 }
-
-//获取兑奖码
-async function get_more() {
-    let time = Date.parse(new Date) / 1e3
-    let nonce = d(1e4, 99999)
-    let text = `${nonce}${time}Asus!@#$%^&*()Store`
+async function chance() {
     let config = {
-        url: `https://store.asus.com.cn/storeapi/user/activity/get-more`,
-        method: "POST",
+        url: `https://instax.app.xcxd.net.cn/api/user/${$.userId}/draw-activities/41/chance`,
+        method: `GET`,
         headers: {
-            'User-Agent': 'okhttp/3.9.1',
-            'Connection': 'Keep-Alive',
-            'Accept-Encoding': 'gzip',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': $.auth,
-            'plat': 'android',
-            'source': '2',
-            'version': '2.7.16',
-            'device': 'MI 8 Lite',
-            'token': $.token,
-            'visitorid': 'a232e99938994576',
-            'Cache-Control': 'no-cache'
-        },
-        data: `page=1&limit=10&timestamp=${time}&nonce=${nonce}&signature=${MD5(text)}`
-    }
-    let { data: result } = await Request(config)
-    if (result?.code == 200) {
-        for (let i of result.data.list) {
-            $.log(`历史奖品:${i.id} ===> [${i.prize_name}]`)
-            if (i.is_exchange !== 1) {
-                if (i.level == 4) {
-                    $.log(`${i.id} 未兑换  --- 脚本执行兑换`)
-                    await exchange(i.id)
-                } else {
-                    $.log(`${i.id} 未兑换实物奖励  --- 请看规则找客服或页面兑换`)
-                }
-
-            }
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Authorization": "Bearer " + $.token,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "Host": "instax.app.xcxd.net.cn",
+            "Referer": "https://servicewechat.com/wx3cb572fbf3aa30c8/134/page-frame.html",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "cross-site",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x6309092b) XWEB/8555",
+            "xweb_xhr": "1"
         }
-
     }
-}
-//兑奖
-
-async function exchange(id) {
-    let time = Date.parse(new Date) / 1e3
-    let nonce = d(1e4, 99999)
-    let text = `${nonce}${time}Asus!@#$%^&*()Store`
-    let config = {
-        url: `https://store.asus.com.cn/storeapi/user/activity/exchange`,
-        method: "POST",
-        headers: {
-            'User-Agent': 'okhttp/3.9.1',
-            'Connection': 'Keep-Alive',
-            'Accept-Encoding': 'gzip',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': $.auth,
-            'plat': 'android',
-            'source': '2',
-            'version': '2.7.16',
-            'device': 'MI 8 Lite',
-            'token': $.token,
-            'visitorid': 'a232e99938994576',
-            'Cache-Control': 'no-cache'
-        },
-        data: `id=${id}&timestamp=${time}&nonce=${nonce}&signature=${MD5(text)}`
-    }
-    let { data: result } = await Request(config)
-    if (result?.code == 200) {
-        $.log(`兑换成功 [${id}]`)
+    let { data: result } = await Request(config);
+    if (result?.error == false) {
+        $.log(`查询抽奖次数 [${result.data}]`);
+        for (let i = 0; i < result.data; i++) {
+            await $.wait(3000)
+            await draw()
+        }
     } else {
-        $.log(`兑换失败 [${result.msg}]`)
+        $.log(`查询抽奖次数 失败[${result.message}]`);
     }
 }
-//抽奖
-async function roll() {
-    let time = Date.parse(new Date) / 1e3
-    let nonce = d(1e4, 99999)
-    let text = `${nonce}${time}Asus!@#$%^&*()Store`
+async function draw() {
     let config = {
-        url: `https://store.asus.com.cn/storeapi/user/activity/roll`,
-        method: "POST",
+        url: `https://instax.app.xcxd.net.cn/api/user/${$.userId}/draw-activities/41/draw`,
+        method: `POST`,
         headers: {
-            'User-Agent': 'okhttp/3.9.1',
-            'Connection': 'Keep-Alive',
-            'Accept-Encoding': 'gzip',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': $.auth,
-            'plat': 'android',
-            'source': '2',
-            'version': '2.7.16',
-            'device': 'MI 8 Lite',
-            'token': $.token,
-            'visitorid': 'a232e99938994576',
-            'Cache-Control': 'no-cache'
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Authorization": "Bearer " + $.token,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "Host": "instax.app.xcxd.net.cn",
+            "Referer": "https://servicewechat.com/wx3cb572fbf3aa30c8/134/page-frame.html",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "cross-site",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x6309092b) XWEB/8555",
+            "xweb_xhr": "1"
         },
-        data: `ticket=RixzlRQgH&activity_type=1&active_code=&timestamp=${time}&nonce=${nonce}&signature=${MD5(text)}`
+        data: JSON.stringify({})
     }
-    let { data: result } = await Request(config)
-    if (result?.code == 200) {
-        $.log(`抽奖成功`)
+    let { data: result } = await Request(config);
+    if (result?.error == false) {
+        $.log(`抽奖成功 [${result.data.record.desc}]`);
     } else {
-        $.log(`抽奖失败 [${result.msg}]`)
+        $.log(`抽奖失败[${result.message}]`);
     }
-
 }
-function d(t, e) {
-    var r = e - t
-        , n = Math.random();
-    return String(t + Math.round(n * r))
-}
-
-function MD5(data) {
-    const crypto = require('crypto');
-    return crypto.createHash('md5').update(data).digest('hex');
-}
-
 function checkEnv(userCookie) {
     const envSplitor = ["&", "\n"];
     //console.log(userCookie);
@@ -234,7 +198,8 @@ async function Request(options) {
             try {
                 return await axios.request(options);
             } catch (error) {
-                return error && error.error ? error.error : "请求失败";
+                //console.log(error.response.data)
+                return error && error.response ? error.response.data : "请求失败";
             }
         };
     }
