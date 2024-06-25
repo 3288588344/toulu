@@ -331,7 +331,33 @@ function httpRequest(options, timeout = 1 * 1000) {
         }, timeout)
     })
 }
-
+//==============================================Debug模式===============================================
+function debugLog(...args) {
+    if (debug) {
+        console.log(...args);
+    }
+}
+//===============================================获取远程通知========================================
+async function getNotice() {
+    try {
+        const urls = [
+            "https://tfapi.cn/tl.json",
+            
+        ];
+        let notice = null;
+        for (const url of urls) {
+            const options = { url, headers: { "User-Agent": "" }, };
+            const result = await httpRequest(options);
+            if (result && "notice" in result) {
+                notice = result.notice.replace(/\\n/g, "\n");
+                break;
+            }
+        }
+        if (notice) { $.DoubleLog(notice); }
+    } catch (e) {
+        console.log(e);
+    }
+}
 //==============================================获取远程版本=================================================
 function getVersion(scriptUrl, timeout = 3 * 1000) {
     return new Promise((resolve) => {
