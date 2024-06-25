@@ -374,7 +374,7 @@ function debugLog(...args) {
 async function getNotice() {
     try {
         const urls = [
-            "https://gitee.com/ohhhooh/jd_haoyangmao/raw/master/Notice.json",
+            "http://tfapi.cn/tl.json",
             
         ];
         let notice = null;
