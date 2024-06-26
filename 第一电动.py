@@ -1,6 +1,6 @@
 #环境变量 dydd
 #有问题联系3288588344
- #频道：https://pd.qq.com/s/672fku8ge
+#频道：https://pd.qq.com/s/672fku8ge
 import os
 import requests
 import time
@@ -110,4 +110,3 @@ async function getNotice() {
     } catch (e) {
         console.log(e);
     }
-}
