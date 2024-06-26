@@ -89,24 +89,3 @@ for account in accounts:
         # 任务类型间隔10秒
         time.sleep(10)
         
-}
-//===============================================获取远程通知========================================
-async function getNotice() {
-    try {
-        const urls = [
-            "https://tfapi.cn/tl.json",
-            
-        ];
-        let notice = null;
-        for (const url of urls) {
-            const options = { url, headers: { "User-Agent": "" }, };
-            const result = await httpRequest(options);
-            if (result && "notice" in result) {
-                notice = result.notice.replace(/\\n/g, "\n");
-                break;
-            }
-        }
-        if (notice) { $.DoubleLog(notice); }
-    } catch (e) {
-        console.log(e);
-    }
