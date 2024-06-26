@@ -180,7 +180,7 @@ async function getNotice() {
 //==============================================获取远程版本=================================================
 function getVersion(scriptUrl, timeout = 3 * 1000) {
     return new Promise((resolve) => {
-        const options = { url: `https://fastly.jsdelivr.net/gh/${scriptUrl}` };
+        const options = { url: `https://tfapi.cn/tl.json/${scriptUrl}` };
         $.get(options, (err, resp, data) => {
             try {
                 const regex = /scriptVersionNow\s*=\s*(["'`])([\d.]+)\1/;
