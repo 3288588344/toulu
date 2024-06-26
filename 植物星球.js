@@ -1,6 +1,8 @@
 /**
  * vx植物星球 
  * zwxq
+ *有问题联系3288588344
+ *频道：https://pd.qq.com/s/672fku8ge
  * Author: Mist
  * Date: 2024-06-25
  * cron "30 9 * * *" zwxq.js
