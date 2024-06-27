@@ -3,7 +3,10 @@
 """
 * 仅供学习交流，请在下载后的24小时内完全删除 请勿将任何内容用于商业或非法目的，否则后果自负。
 * 巨量ip签到。每日签到领取1000免费IP
-* 巨量ip注册地址  https://www.juliangip.com/user/reg?inviteCode=1017082
+* 巨量ip注册地址  https://www.juliangip.com/user/reg?inviteCode=1031551
+*打码平台：http://www.gxfc-s4.com/
+*有问题联系3288588344
+*频道：https://pd.qq.com/s/672fku8ge
 #!/usr/bin/env python3
 """
 # # # # # # # # # # # 
