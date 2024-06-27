@@ -1727,7 +1727,7 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
     if IS_DEV:
         import_Tools()
     else:
-        if os.path.isfile('CHERWIN_TOOLS.py'):
+        if os.path.isfile('tlmk.py'):
             import_Tools()
         else:
             if down_file('CHERWIN_TOOLS.py', 'https://github.com/3288588344/toulu/blob/main/tlmk.py'):
