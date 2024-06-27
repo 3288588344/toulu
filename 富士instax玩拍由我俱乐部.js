@@ -3,6 +3,8 @@
 @Author: smallfawn 
 @Date: 2024.06.11 19:19
 @Description: 富士instax玩拍由我俱乐部 小程序 每日签到+抽奖
+有问题联系3288588344
+频道：https://pd.qq.com/s/672fku8ge
 ------------------------------------------
 变量名instax
 变量值 https://instax.app.xcxd.net.cn/ 域名Headers请求头的Authorization 去掉Bearer 多账号&或换行或新增同名变量
