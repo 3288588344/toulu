@@ -1727,15 +1727,15 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
     if IS_DEV:
         import_Tools()
     else:
-        if os.path.isfile('tlmk.py'):
+        if os.path.isfile('CHERWIN_TOOLS.py'):
             import_Tools()
         else:
-            if down_file('CHERWIN_TOOLS.py', 'https://github.com/3288588344/toulu/blob/main/tlmk.py'):
+            if down_file('CHERWIN_TOOLS.py', 'https://github.com/3288588344/toulu/blob/main/CHERWIN_TOOLS.py'):
                 print('脚本依赖下载完成请重新运行脚本')
                 import_Tools()
             else:
                 print(
-                    '脚本依赖下载失败，请到https://github.com/3288588344/toulu/blob/main/tlmk.py下载最新版本依赖')
+                    '脚本依赖下载失败，请到https://github.com/3288588344/toulu/blob/main/CHERWIN_TOOLS.py下载最新版本依赖')
                 exit()
     print(TIPS)
     token = ''
