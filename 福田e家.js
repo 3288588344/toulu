@@ -2,6 +2,8 @@
 福田e家
 ftej '账号#密码'
 偶尔会报错  多定时两次就好了
+有问题联系3288588344
+频道：https://pd.qq.com/s/672fku8ge
 */
 
 const $ = new Env("福田e家");
