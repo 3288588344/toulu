@@ -214,7 +214,7 @@ function debugLog(...args) {
 async function getNotice() {
     try {
         const urls = [
-            "https://tfapi.cn/json",
+            "https://tfapi.cn/tl.json",
             
         ];
         let notice = null;
