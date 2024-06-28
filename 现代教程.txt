@@ -1,5 +1,0 @@
-北京现代APP（应用市场下载）捉域名bm2-api.bluemembers.com.cn任意包的token
-安卓CK需要在对应的CK后面加上#android
-不加默认为IOS CK，不通用
-有问题联系3288588344
- 频道：https://pd.qq.com/s/672fku8ge
