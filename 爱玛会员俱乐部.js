@@ -3,6 +3,8 @@
 @Author: smallfawn 
 @Date: 2024.06.08 10.25
 @Description: 爱玛会员俱乐部 小程序
+ 有问题联系3288588344
+ 频道：https://pd.qq.com/s/672fku8ge
 ------------------------------------------
 变量名 aima
 变量值 https://scrm.aimatech.com/aima 请求头Headers中access-token的值 多账号&或换行或新建同名变量
