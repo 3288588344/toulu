@@ -1,5 +1,5 @@
 {
-  "APP_TL库":{
+  "APP_CONFIG":{
       "YHSH": {
         "NEW_VERSION": "2024.05.15",
         "APP_NAME": "永辉生活",
@@ -256,7 +256,7 @@
         "ENABLE": true
       }
   },
-  "TL库_HTML": "\n<br>======= TL库 =======<br>\n脚本免费使用<br>\n发布地址：<a href='https://github.com/3288588344/toulu.git'>点击跳转</a><br>\nQQ频道：<a href='https://pd.qq.com/s/btv4bw7av'>点击跳转</a><br>\n联系我们：<a href='https://qm.qq.com/q/19nOFkqbmA'>点击跳转</a><br>\n<img style='width:150px;' src='https://i.postimg.cc/mDxh8txc/mm-reward-qrcode-1720176259292.png'></img><br>\n喜欢请打赏支持开发，谢谢！",
-  "GLOBAL_NTC": "\n======= TL库 =======\n脚本免费使用\n发布地址：https://github.com/3288588344/toulu \n喜欢请打赏支持开发，谢谢！",
+  "GLOBAL_NTC_HTML": "\n<br>======= CHERWIN SCRIPTS =======<br>\n脚本免费使用！<br>\n发布地址：<a href='https://github.com/3288588344/toulu/blob/main/tlbb.json'>点击跳转</a><br>\n联系我们：<a href='https://qm.qq.com/q/19nOFkqbmA'>点击跳转</a><br>\nQQ频道：<a href='https://pd.qq.com/s/btv4bw7av'>点击跳转</a><br>\n<img style='width:150px;' src='https://i.postimg.cc/mDxh8txc/mm-reward-qrcode-1720176259292.png'></img><br>\n喜欢请打赏支持开发，谢谢！",
+  "GLOBAL_NTC": "\n======= CHERWIN SCRIPTS =======\n脚本免费使用\n发布地址：https://github.com/3288588344/toulu/blob/main/tlbb.json\n联系我们：https://qm.qq.com/q/19nOFkqbmA\nQQ频道：https://pd.qq.com/s/btv4bw7av \n喜欢请打赏支持开发，谢谢！",
   "TOOLS_VERSION": "2024.05.27"
 }
