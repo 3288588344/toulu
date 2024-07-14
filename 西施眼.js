@@ -2,9 +2,10 @@
  * cron "6 8,14,20 * * *" XiShiYan.js
  * export XiShiYan="账号1&密码1 账号2&密码2"
  * export OCR_SERVER="ocr服务"
+  应用市场下载西施眼APP
+ 
  有问题联系3288588344
  频道：https://pd.qq.com/s/672fku8ge
-中国联通 v2.08
 长期套餐大额流量电话卡办理地址：https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=669709
  */
 const $ = new Env('西施眼')
