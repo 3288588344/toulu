@@ -3,6 +3,9 @@
  频道：https://pd.qq.com/s/672fku8ge
 中国联通 v2.08
 
+一键抓包exe
+https://www.123pan.com/s/TGXSVv-dAp8A.html
+
 包含以下功能:
 阅光宝盒, 首页签到, 立减金打卡, 阅读专区抽奖, 云盘抽奖, 联通祝福
 支付日活动 (每个月26-28号)
