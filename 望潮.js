@@ -1,6 +1,6 @@
 /**
  * cron "20 9,15,21 * * *" WangChao.js
- * export WangChao="账号1&密码1 账号2&密码2"
+ * export WangChao="账号1&密码1 多账号用/隔开
  *变量名大小写必须和上面一样，不然会提示账号不存在
  
  
