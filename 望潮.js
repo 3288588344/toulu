@@ -36,7 +36,7 @@ async function main() {
         return
     }
     Utils = await loadUtils();
-    let arr = WangChao.split(" ");
+    let arr = WangChao.split("/");
     for (const item of arr) {
         console.log("随机生成UA")
         let randomUA = generateRandomUA();
