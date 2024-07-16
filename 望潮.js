@@ -2,7 +2,7 @@
  * cron "20 9,15,21 * * *" WangChao.js
  * export WangChao="账号1&密码1 多账号用/隔开
  *变量名大小写必须和上面一样，不然会提示账号不存在
- 
+ 望潮可改密码版（不要更新）：https://www.123pan.com/s/TGXSVv-G9p8A.html
  
   有问题联系3288588344
  频道：https://pd.qq.com/s/672fku8ge
