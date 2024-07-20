@@ -1,4 +1,5 @@
 /*
+小程序美孚臻享俱乐部
 变量名=mftoken
 抓包www.rewards.mobil.com.cn域名的请求头的X-access-token
 多账号分割&
