@@ -1,4 +1,5 @@
 /*
+微信小程序DQ点蛋安卓版
 抓包wechat.dairyqueen.com.cn域名下的cookie
 变量名=dqdd
 多账号用&分开或者添加多个变量名
