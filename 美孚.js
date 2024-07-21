@@ -12,7 +12,7 @@
 
 
 const axios = require('axios');
-const mftoken = process.env.mftokens.split('&');
+const mftoken = process.env.mftoken.split('&');
 
 const url = "https://www.rewards.mobil.com.cn/web/index.php?_mall_id=1&r=api/kc/user/user-sign-info";
 
