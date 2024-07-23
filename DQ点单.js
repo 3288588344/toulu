@@ -22,7 +22,7 @@ async function fetchSignInfo(cookie, accountIndex) {
     'Connection': 'keep-alive',
     'Content-Length': '0',
     'charset': 'utf-8',
-    'cookie': cookie,
+    'cookie': dqdd,
     'channel': '202',
     'User-Agent': 'Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.122 Mobile Safari/537.36 XWEB/1260059 MMWEBSDK/20240501 MMWEBID/3628 MicroMessenger/8.0.50.2701(0x28003252) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64 MiniProgramEnv/android',
     'content-type': 'application/json',
