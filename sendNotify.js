@@ -1,8 +1,5 @@
 /*
- * @Author: lxk0301 https://gitee.com/lxk0301
- * @Date: 2020-08-19 16:12:40
- * @Last Modified by: whyour
- * @Last Modified time: 2021-5-1 15:00:54
+ * @A
  * sendNotify 推送通知功能
  * @param text 通知头
  * @param desp 通知体
@@ -32,6 +29,7 @@ let GOBOT_QQ = ''; // 如果GOBOT_URL设置 /send_private_msg 则需要填入 us
 // =======================================微信server酱通知设置区域===========================================
 //此处填你申请的SCKEY.
 //(环境变量名 PUSH_KEY)
+//入口:https://sct.ftqq.com/r/13377
 let SCKEY = '';
 
 // =======================================PushDeer通知设置区域===========================================
