@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
+#一键取ck exe：https://www.123pan.com/s/TGXSVv-cap8A.html
 # ------------------------------
 # cron "3 0 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('联通和沃畅游密码登录');
