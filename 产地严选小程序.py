@@ -3,11 +3,13 @@
 可以在浏览器打开https://c.hanhoukeji.com/h5/#/网页获取Access-Token
 也可以在微信小程序获取Access-Token
 变量名：cdyxck，多号&分割
+TL库
 每天一次
 有问题联系3288588344
- 频道：https://pd.qq.com/s/672fku8ge
+频道：https://pd.qq.com/s/672fku8ge
 
 长期套餐大额流量电话卡办理地址：https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=669709
+
 
 '''
 
