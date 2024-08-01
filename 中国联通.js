@@ -3,6 +3,8 @@
  频道：https://pd.qq.com/s/672fku8ge
 中国联通 v2.08
 
+拉菲修复本，别来问这个为什么跑不了，问就被骂!
+
 一键抓包exe
 https://www.123pan.com/s/TGXSVv-dAp8A.html
 
