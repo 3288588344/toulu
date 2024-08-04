@@ -3,7 +3,7 @@
 联系：3288588344（看心情回，巨婴别来问）
 下载config.toml文件，上传到同目录，在config.toml文件中填联想APP的手机号和密码
 通知可填可不填
-config.toml文件下载链接：
+config.toml文件下载链接：https://raw.githubusercontent.com/3288588344/toulu/main/config.toml
 '''
 import base64
 import json
