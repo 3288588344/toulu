@@ -1,0 +1,8 @@
+# 欢太商城【APP】
+# 欢太商城 APP cookie，建议全部粘贴
+# 抽奖总开关，设置为 false 将不参与任何抽奖，应对一些抽奖黑号
+# 欢太商城 APP UA
+[[HEYTAP]]
+cookie = 'memberinfo=xxxxxx; sensorsdata2015jssdkcross=xxxxxx; uc=xxxxxx; um=xxxxxx; us=xxxxxx; ut=xxxxxx; utm_campaign=xxxxxx; utm_medium=xxxxxx; utm_source=xxxxxx; utm_term=xxxxxx; ENCODE_TOKENSID=xxxxxx; TOKENSID=xxxxxx; apkPkg=xxxxxx; app_innerutm="xxxxxx"; app_param="xxxxxx"; app_utm="xxxxxx"; exp_id=; experiment_id=xxxxxx; log_id=; referer=; retrieve_id=; s_channel=xxxxxx; s_version=xxxxxx; sa_distinct_id=xxxxxx; scene_id=; section_id=; source_type=xxx; strategy_id=; sajssdk_20x5_cross_new_user=x'
+draw = false
+useragent = ""
