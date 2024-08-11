@@ -5,7 +5,14 @@ check.sample.toml文件下载链接：https://raw.githubusercontent.com/32885883
 cron: 19 5,21 * * *
 new Env('欢太商城');
 QQ频道：98do10s246
+自行安装依赖
+utils_tmp
+json
+re
+time
+requests
 """
+
 
 import json
 import re
