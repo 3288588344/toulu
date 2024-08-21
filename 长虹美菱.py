@@ -1,6 +1,7 @@
 #环境变量 chmlck 取url请求头中的token
 #变量格式 token#备注，多账号换行
-#搜微信小程序长虹美菱
+#微信扫码打开：https://i.postimg.cc/kGQrQ79B/Screenshot-2024-08-21-17-17-34-718-com-tencent-mm-edit.jpg
+或者复制打开：#小程序://长虹美菱会员服务/4Tyqa3BKqs1AW0a
 #有问题联系3288588344
 #频道：https://pd.qq.com/s/672fku8ge
 
