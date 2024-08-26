@@ -2,8 +2,6 @@
 福田e家
 ftej '账号#密码'
 偶尔会报错  多定时两次就好了
-有问题联系3288588344
-频道：https://pd.qq.com/s/672fku8ge
 */
 
 const $ = new Env("福田e家");
@@ -958,7 +956,7 @@ ${this.name} 运行结束，共运行了 ${c} 秒！`), (this.isSurge() || this.
 async function getNotice() {
     try {
         const urls = [
-            "https://tfapi.cn/tl.json",
+            "https://github.com/3288588344/toulu/raw/main/tl.json",
             
         ];
         let notice = null;

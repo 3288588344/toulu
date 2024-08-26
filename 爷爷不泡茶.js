@@ -1,4 +1,3 @@
-/**
  * 爷爷不泡茶
  * yybpc
  *有问题联系3288588344
@@ -223,7 +222,7 @@ function debugLog(...args) {
 async function getNotice() {
     try {
         const urls = [
-            "https://tfapi.cn/tl.json",
+            "https://github.com/3288588344/toulu/raw/main/tl.json",
             
         ];
         let notice = null;
