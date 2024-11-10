@@ -376,7 +376,7 @@ async function loadUtils() {
     console.log(`🚀 ${$.name}: 开始下载Utils代码`)
     return new Promise(async (resolve) => {
         $.getScript(
-            'https:Utils.js'
+            'https://raw.githubusercontent.com/3288588344/toulu/main/Utils.js'
         ).then((fn) => {
             $.setdata(fn, "Utils_Code")
             eval(fn)
