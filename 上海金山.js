@@ -11,6 +11,7 @@
 
 
 功能:完成日常任务，每天38积分左右
+注意：目前只能去线下兑换，在上海的或者有上海朋友的再来跑
 变量名:shjsck
 注册登录之后进入页面开始抓包，随便点点，找到http://mapijs.newsjs.net/api/open/jinshan/m_member.php?开头的包，链接里面access_token的值作为变量，多账号&隔开
 定时:一天一次即可
