@@ -1,5 +1,14 @@
 /*
+   TL库:https://github.com/3288588344/toulu.git
+  tg频道:https://t.me/TLtoulu
+  QQ频道:https://pd.qq.com/s/672fku8ge
+
 掌心临海
+
+入口：https://app.linhaitv.com/application/personal/inviteShare/invite.html?code=797995&name=131****0936
+
+邀请码：797995
+
 完成每日任务
 变量 zxlhapp  抓取账号请求头token的值就可以
 
