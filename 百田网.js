@@ -7,7 +7,7 @@
 
 
 
-
+ * 入口：http://www.100bt.com/
  * cron 44 14 * * *  baitianGame.js
  * Show:完成每日做任务和积分抢购（兑换）
  * //多账号分隔符 换行 或者 @
