@@ -1,5 +1,6 @@
 # toulu
-TL库拉库链接:https://github.com/3288588344/toulu.git
+拉库:
+https://github.com/3288588344/toulu.git
 
 tg频道：https://t.me/TLtoulu
 
