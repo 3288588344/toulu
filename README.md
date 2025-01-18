@@ -6,4 +6,4 @@ tg频道：https://t.me/TLtoulu
 
 QQ频道：https://pd.qq.com/s/672fku8ge
 
-QQ机器人：3060359415
+微信机器人：kckl6688
