@@ -2,7 +2,7 @@
 盖瑞特后市场
 入口：http://weixin.qq.com/q/02TSy-4ATzbKe1CDzRND1D
 变量名:grtck
-依赖axios
+抓包app.ma.scrmtech.com域名下的cookie
 */
 const axios = require('axios');
 
