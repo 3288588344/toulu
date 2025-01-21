@@ -1,7 +1,8 @@
 #每天2毛，抓请求头里的x_token，ey开头的那串
 #name是备注，随便写。多号按以下格式复制粘贴
 #入口:微信小程序:北京96156
-
+#wxpusher通知订阅链接:https://wxpusher.zjiecode.com/wxuser/?type=1&id=79517#/follow
+#下面的wxpusher参数必须填，不然跑不了
 
 #TL库:https://github.com/3288588344/toulu.git
 #tg频道:https://t.me/TLtoulu
@@ -21,7 +22,7 @@ ck = '''{"data": [
         }
     ]}'''
 
-push_token = 'UID_5pOoko7jlD5eIirr8WXrCmGPkgz9' #wxpusher的UID
+push_token = '' #wxpusher的UID
 push_title = 'TL库通知' 
 push_content = 'TL\n\n'
 wxapp_token = 'AT_VYtANZpJ6ecWpgwz9iQdUoSMz3ONwOdA'#wxpusher的APPToken
