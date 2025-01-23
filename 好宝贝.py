@@ -1,5 +1,5 @@
 #每天签到积分，可以换实物
-#抓包找miniapi.linkkids.cn域名，请求头含cookie的，_platform_num=开头的那串填入第9行的ck
+#抓包找miniapi.linkkids.cn域名，请求头含cookie的，_platform_num=开头的
 #推送自己看着写，wxpusher的
 #入口:微信小程序好宝贝母婴生活
 #环境变量名hbbck
