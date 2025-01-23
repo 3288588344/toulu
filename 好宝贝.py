@@ -20,19 +20,30 @@ push_content = 'TL库\n\n'
 wxapp_token = 'AT_aTsJ*********'  # wxpusher的APPToken
 
 def wxpusher_send():
+    """
+    发送消息到wxpusher
+    """
     headers = {'Content-Type': 'application/json;charset=utf-8'}
     data = {
         "appToken": wxapp_token,
-        "uids": [f"{push_token}"],
+        "uids": [push_token],
         "topicIds": [],
         "summary": push_title,
         "content": push_content,
         "contentType": 1,
         "verifyPay": False
     }
-    json_data = json.dumps(data)
-    response = requests.post('https://wxpusher.zjiecode.com/api/send/message', headers=headers, data=json_data)
-    print(response.text, "\n")
+
+    try:
+        response = requests.post('https://wxpusher.zjiecode.com/api/send/message', headers=headers, data=json.dumps(data))
+        
+        # 获取响应的 JSON 数据
+        response_json = response.json()
+        
+        print(f"wxpusher 推送: {response_json.get('msg', '没有返回 msg 字段')}")
+        
+    except requests.exceptions.RequestException as e:
+        print(f"wxpusher 推送失败: {e}")
 
 # 获取公告信息
 def get_announcement():
