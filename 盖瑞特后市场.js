@@ -11,7 +11,7 @@ async function main() {
     const externalUrl = 'https://github.com/3288588344/toulu/raw/refs/heads/main/tl.txt';
     const externalResponse = await axios.get(externalUrl);
     
-    console.log('公告:', externalResponse.data);
+    console.log( externalResponse.data);
 
    
     if (externalResponse.status === 200) {
