@@ -52,7 +52,7 @@ def get_announcement():
     try:
         response = requests.get(external_url)
         if response.status_code == 200:
-            print("公告:", response.text)
+            print(response.text)
             print("公告获取成功，开始执行签到请求...")
         else:
             print(f"获取公告失败，状态码: {response.status_code}")
