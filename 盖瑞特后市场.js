@@ -37,19 +37,9 @@ async function main() {
 
       const signInResponse = await axios.get(url, { headers });
 
-      // 打印整个返回的响应内容
-      console.log('签到响应内容:', signInResponse);
-
-      const { data } = signInResponse;
-      console.log('返回的 data:', data); // 打印 data 确认返回的数据结构
-
       if (data.code === 30005) {
         console.log('签到成功');
-      } else if (data.code === 0) {
-        console.log('签到失败');
-      } else {
-        console.log('未知错误代码:', data.code);  // 如果不是我们预期的错误代码，输出错误
-      }
+      } 
     } else {
       console.log('公告获取失败，HTTP 状态码:', externalResponse.status);
     }
