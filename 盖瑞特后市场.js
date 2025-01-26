@@ -2,7 +2,7 @@
 盖瑞特后市场
 入口：http://weixin.qq.com/q/02TSy-4ATzbKe1CDzRND1D
 变量名:grtck
-抓包app.ma.scrmtech.com域名下的cookie
+依赖require
 */
 const axios = require('axios');
 
@@ -11,11 +11,13 @@ async function main() {
     const externalUrl = 'https://github.com/3288588344/toulu/raw/refs/heads/main/tl.txt';
     const externalResponse = await axios.get(externalUrl);
     
-    console.log('externalResponse.data);
+    console.log('公告:', externalResponse.data);
 
+   
     if (externalResponse.status === 200) {
       console.log('公告获取成功，开始执行签到请求...');
-
+      
+      
       const cookies = process.env.grtck.split(',');     
       const url = 'https://app.ma.scrmtech.com/svip/index/SignSet';
       const headers = {
@@ -35,18 +37,27 @@ async function main() {
         'cookie': cookies.join('; '), 
       };
 
+    
       const signInResponse = await axios.get(url, { headers });
 
+     
+      const { data } = signInResponse;
       if (data.code === 30005) {
         console.log('签到成功');
-      } 
+      } else if (data.code === 0) {
+        console.log('今日已签到，每天再试试吧');
+      }
     } else {
       console.log('公告获取失败，HTTP 状态码:', externalResponse.status);
     }
-
+    
   } catch (error) {
     console.error('发生错误:', error.message);
   }
 }
 
+
 main();
+/*
+TL库
+*/
