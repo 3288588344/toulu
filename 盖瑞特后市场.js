@@ -42,9 +42,9 @@ async function main() {
 
      
       const { data } = signInResponse;
-      if (data.code === 0) {
+      if (data.code === 30005) {
         console.log('签到成功');
-      } else if (data.code === 30005) {
+      } else if (data.code === 0) {
         console.log('今日已签到，每天再试试吧');
       } else {
         console.log('签到失败，未知错误代码:', data.code);
