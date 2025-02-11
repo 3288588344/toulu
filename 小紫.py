@@ -52,7 +52,7 @@ def get_announcement():
     try:
         response = requests.get(external_url)
         if response.status_code == 200:
-            print(response.text)
+            print( response.text)
             print("公告获取成功，开始执行签到请求...")
         else:
             print(f"获取公告失败，状态码: {response.status_code}")
@@ -79,14 +79,14 @@ def sign_in(cookie_xz):
         "Sec-Fetch-Site": "same-origin",
         "Sec-Fetch-Mode": "cors",
         "Sec-Fetch-Dest": "empty",
-        "Referer": "https://sxkyziqidonglai.cn/activity/signIn?siteId=SITE_33254242630091515087&channelCode=WXjxriol8e8293wezu&actCode=SIGNIN202412311146401249",
+        "Referer": "https://sxkyziqidonglai.cn/activity/signIn?siteId=SITE_33254242630091515087&channelCode=WXjxriol8e8293wezu&actCode=SIGNIN202501201006598253",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
         "Cookie": cookie_xz
     }
 
     data = {
-        "actCode": "SIGNIN202412311146401249",
+        "actCode": "SIGNIN202501201006598253",
         "siteId": "SITE_33254242630091515087"
     }
 
@@ -97,7 +97,7 @@ def sign_in(cookie_xz):
         if response.status_code == 200:
             response_json = response.json()
             if 'msg' in response_json:
-                print(f"请求成功: {response_json['msg']}")
+                print(f"{response_json['msg']}")
                 wxpusher_send()  # 签到成功后发送推送
             else:
                 print("请求成功，但未找到 'msg' 字段")
