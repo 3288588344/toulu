@@ -2,6 +2,9 @@ import os
 import requests
 import json
 
+
+#cookie在https://account.xiaomi.com/pass/sns/wxapp/v2/tokenLogin链接下
+#变量名xmsq，多账号使用&分割
 def get_cookies_from_env():
     """
     从环境变量中获取cookie值，多账号使用&分割
