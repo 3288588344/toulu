@@ -10,4 +10,5 @@ QQ频道：https://pd.qq.com/s/672fku8ge
 
 微信公众号:哆啦A梦的藏宝箱
 
-个人博客网站:TFAPI.CN
+
+个人博客网站:http://tfapi.cn
