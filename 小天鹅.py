@@ -38,22 +38,37 @@ def check_environment_variable():
     
     return accounts
 
+# 获取公告信息
 def get_proclamation():
-    """获取公告信息"""
-    external_url = "https://github.com/3288588344/toulu/raw/refs/heads/main/tl.txt"
+    primary_url = "https://github.com/3288588344/toulu/raw/refs/heads/main/tl.txt"
+    backup_url = "https://tfapi.cn/TL/tl.json"
     try:
-        response = requests.get(external_url, timeout=10)
+        response = requests.get(primary_url, timeout=10)
         if response.status_code == 200:
             print("\n" + "=" * 50)
             print("📢 公告信息")
-            print("=" * 50)
+            print("=" * 35)
             print(response.text)
-            print("=" * 50 + "\n")
+            print("=" * 35 + "\n")
+            print("公告获取成功，开始执行任务...\n")
+            return
+    except requests.exceptions.RequestException as e:
+        print(f"获取公告时发生错误: {e}, 尝试备用链接...")
+
+    try:
+        response = requests.get(backup_url, timeout=10)
+        if response.status_code == 200:
+            print("\n" + "=" * 50)
+            print("📢 公告信息")
+            print("=" * 35)
+            print(response.text)
+            print("=" * 35 + "\n")
             print("公告获取成功，开始执行任务...\n")
         else:
             print(f"⚠️ 获取公告失败，状态码: {response.status_code}")
     except requests.exceptions.RequestException as e:
-        print(f"⚠️ 获取公告时发生错误: {e}")
+        print(f"⚠️ 获取公告时发生错误: {e}, 可能是网络问题或链接无效。")
+
 
 def send_sign_request(imUserId, uid):
     """发送签到请求"""
