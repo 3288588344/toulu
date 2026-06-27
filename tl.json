@@ -1,3 +1,24 @@
 {
-	"notice": " \n🎉微信机器人:kckl6688\n🎉【tl库】：https://pd.qq.com/s/btv4bw7av\n🎉长期套餐大额流量电话卡办理地址：https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=669709\n🎉tg频道：https://t.me/TLtoulu "
+  "resources": {
+    "github": "https://github.com/3288588344/toulu.git",
+    "homepage": "http://tfapi.cn/"
+  },
+  "community": {
+    "qq_channel": {
+      "url": "https://pd.qq.com/s/btv4bw7av",
+      "description": "技术交流、资源分享"
+    },
+    "telegram_channel": "https://t.me/TLtoulu"
+  },
+  "contact": {
+    "wechat_official_account": "哆啦A梦的藏宝箱",
+    "personal_wechat": "TWLW06",
+    "email": "3288588344@qq.com",
+    "wechat_miniprogram": "天分盘搜"
+  },
+  "services": {
+    "submission": "项目投稿",
+    "paid_service": "代搭建代挂机器人一条龙"
+  },
+  "author_note": "我没有任何义务免费帮你解决问题，可寻找热心群友或者自行尝试"
 }
