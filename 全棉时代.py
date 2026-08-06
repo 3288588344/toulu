@@ -410,8 +410,11 @@ def hqid(code, token):  # 获取树木ID和阳光信息
             tree_data = response_data['data']['tree']
             user_data = response_data['data']['user']  # 获取用户相关数据
 
+            if isinstance(tree_data, list):
+              tree_data = tree_data[0] if tree_data else {}
+
             # 获取树木ID
-            tree_id = tree_data.get('id')
+            tree_id = tree_data.get('id') if isinstance(tree_data, dict) else None
 
             # 获取阳光相关数据
             sunshine = user_data.get('sunshine', 0)  # 如果不存在，则默认为0
